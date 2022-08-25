@@ -7,6 +7,7 @@ WORKDIR /app
 COPY . .
 
 EXPOSE 3000
+HEALTHCHECK CMD curl http://localhost:3000/ || exit 1
 
 RUN yarn install
 
